@@ -3,9 +3,10 @@ import react from '@vitejs/plugin-react';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 export default defineConfig({
+  base: '/frontend-repo/', // Para configurar la base correcta
   plugins: [
     react(),
-    nodePolyfills() // Asegúrate de invocar la función si es necesario
+    nodePolyfills()
   ],
   resolve: {
     alias: {
