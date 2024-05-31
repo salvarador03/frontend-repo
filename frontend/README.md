@@ -1,0 +1,1 @@
+# Parte de frontend del proyecto, utilizare React, Tailwindcss y AJAX
