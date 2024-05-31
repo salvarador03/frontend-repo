@@ -100,7 +100,7 @@ const Login = () => {
             </div>
           </div>
           <div className="text-center">
-            <Link to="/forgot-password" className="font-medium text-gray-700 hover:text-gray-800 transition">
+            <Link to="/frontend-repo/forgot-password" className="font-medium text-gray-700 hover:text-gray-800 transition">
               {messages['text.login.forgot']}
             </Link>
           </div>

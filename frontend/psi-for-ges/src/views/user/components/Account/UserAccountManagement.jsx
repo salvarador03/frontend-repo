@@ -28,7 +28,7 @@ const UserAccountManagement = () => {
                 <Breadcrumb />
                 <div className="flex flex-col items-center mb-10">
                     <h1 className="text-3xl font-bold mb-2">{messages['text.micuenta.titulo']}</h1>
-                    <Link to="/logout">
+                    <Link to="/frontend-repo/logout">
                         <button className="text-gray-700 hover:text-gray-900" onClick={logout}>
                             {messages['text.micuenta.logout']}
                         </button>
@@ -45,7 +45,7 @@ const UserAccountManagement = () => {
                         <p className="mb-4">{userSession?.country}</p>
                         <p className="mb-4">{userSession?.phone}</p>
                         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            <Link to="/account-management/information">
+                            <Link to="/frontend-repo/account-management/information">
                                 {messages['text.micuenta.informacion.personal']}
                             </Link>
                         </button>

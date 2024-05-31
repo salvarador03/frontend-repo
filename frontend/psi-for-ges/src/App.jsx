@@ -1,6 +1,6 @@
 import React, { useEffect, useState, Suspense, lazy } from 'react';
 import { Route, Routes, Navigate, useLocation, useNavigate } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import Header from './views/user/components/common/Header/Header';
 import Footer from './views/user/components/common/Footer/Footer';
 import AdminNavbar from './views/admin/components/common/AdminNavbar/AdminNavbar';
@@ -31,6 +31,9 @@ import UsuarioPublicaciones from './views/user/components/MyBlogUser/UsuarioPubl
 import UserPublicacionPage from './views/user/components/MyBlogUser/UserPublicacionPage';
 import Success from './views/user/components/common/SubscriptionDialog/Success';
 import Cancel from './views/user/components/common/SubscriptionDialog/Cancel';
+
+// Importa el logo
+import logo from './assets/img/logo.svg';
 
 const ForgotPassword = lazy(() => {
   return new Promise(resolve => {
@@ -107,8 +110,8 @@ function App() {
 
   const shouldExcludeModal = (path) => {
     const excludedPaths = [
-      '/login', '/register', '/reset-password', '/forgot-password',
-      '/sobremi', '/contacto', '/search', '/success', '/cancel'  // Añadir success y cancel
+      '/frontend-repo/login', '/frontend-repo/register', '/frontend-repo/reset-password', '/frontend-repo/forgot-password',
+      '/frontend-repo/sobremi', '/frontend-repo/contacto', '/frontend-repo/search', '/frontend-repo/success', '/frontend-repo/cancel'  // Añadir success y cancel
     ];
     return excludedPaths.includes(path);
   };
@@ -124,13 +127,13 @@ function App() {
 
   const handleAcceptCookiesAndRegister = () => {
     acceptCookies();
-    navigate('/register');
+    navigate('/frontend-repo/register');
     setIsModalOpen(false);
   };
 
   const handleLogin = () => {
     acceptCookies();
-    navigate('/login');
+    navigate('/frontend-repo/login');
     setIsModalOpen(false);
   };
 
@@ -139,51 +142,53 @@ function App() {
       <BackgroundSVG />
       <div className="relative z-10">
         {isAdmin ? <AdminNavbar /> : <Header />}
+        {/* Puedes usar el logo importado en cualquier parte de tu componente */}
+        <img src={logo} alt="Logo" className="w-32 h-32 mx-auto my-4" />
         {/* <Advertisement /> */}
         <div className="container mx-auto px-4 mt-32">
           <AnimatePresence exitBeforeEnter>
             <Suspense fallback={<Loader />}>
               <Routes location={location} key={location.pathname}>
-                <Route path="/register" element={<ErrorBoundary><Register /></ErrorBoundary>} />
-                <Route path="/login" element={<ErrorBoundary><Login /></ErrorBoundary>} />
-                <Route path="/servicios" element={<ErrorBoundary><Servicios /></ErrorBoundary>} />
-                <Route path="/sobremi" element={
+                <Route path="/frontend-repo/" element={<Navigate to="/frontend-repo/sobremi" />} /> {/* Redirigir la ruta raíz a sobremi */}
+                <Route path="/frontend-repo/register" element={<ErrorBoundary><Register /></ErrorBoundary>} />
+                <Route path="/frontend-repo/login" element={<ErrorBoundary><Login /></ErrorBoundary>} />
+                <Route path="/frontend-repo/servicios" element={<ErrorBoundary><Servicios /></ErrorBoundary>} />
+                <Route path="/frontend-repo/sobremi" element={
                   <ErrorBoundary>
                     <Suspense fallback={<PersonalInfoLoader />}>
                       <SobreMi />
                     </Suspense>
                   </ErrorBoundary>
                 } />
-                <Route path="/contacto" element={<ErrorBoundary><Contacto /></ErrorBoundary>} />
-                <Route path="/forgot-password" element={<ErrorBoundary><ForgotPassword /></ErrorBoundary>} />
-                <Route path="/reset-password" element={<ErrorBoundary><ResetPassword /></ErrorBoundary>} />
-                <Route path="/success" element={<Success />} />  {/* Añadir ruta de éxito */}
-                <Route path="/cancel" element={<Cancel />} />    {/* Añadir ruta de cancelación */}
+                <Route path="/frontend-repo/contacto" element={<ErrorBoundary><Contacto /></ErrorBoundary>} />
+                <Route path="/frontend-repo/forgot-password" element={<ErrorBoundary><ForgotPassword /></ErrorBoundary>} />
+                <Route path="/frontend-repo/reset-password" element={<ErrorBoundary><ResetPassword /></ErrorBoundary>} />
+                <Route path="/frontend-repo/success" element={<Success />} />  {/* Añadir ruta de éxito */}
+                <Route path="/frontend-repo/cancel" element={<Cancel />} />    {/* Añadir ruta de cancelación */}
                 {isAdmin ? (
                   <>
-                    <Route path="/admin/crear-publicaciones" element={<ErrorBoundary><FormularioPublicacion /></ErrorBoundary>} />
-                    <Route path="/admin/publicaciones" element={<ErrorBoundary><AdminPublicaciones /></ErrorBoundary>} />
-                    <Route path="/admin/kanban/casos" element={<ErrorBoundary><CustomKanban /></ErrorBoundary>} />
-                    <Route path="/admin/caso/:id" element={<ErrorBoundary><FormularioCasoParent /></ErrorBoundary>} />
-                    <Route path="/admin/nuevo-caso" element={<ErrorBoundary><FormularioCasoParent /></ErrorBoundary>} />
-                    <Route path="/admin/gestion" element={<ErrorBoundary><GestionPage /></ErrorBoundary>} />
-                    <Route path="/publicacion/:publicacionid" element={<PublicacionPage />} />
-                    <Route path="/admin/editar-publicacion/:id" element={<EditarPublicacion />} />
-                    <Route path="/admin/account-management" element={<ErrorBoundary><AdminAccountManagement /></ErrorBoundary>} />
-                    <Route path="/admin/faq" element={<ErrorBoundary><AdminFAQ /></ErrorBoundary>} />
-                    <Route path="/admin/account-management/information" element={<ErrorBoundary><AdminInformation /></ErrorBoundary>} />
+                    <Route path="/frontend-repo/admin/crear-publicaciones" element={<ErrorBoundary><FormularioPublicacion /></ErrorBoundary>} />
+                    <Route path="/frontend-repo/admin/publicaciones" element={<ErrorBoundary><AdminPublicaciones /></ErrorBoundary>} />
+                    <Route path="/frontend-repo/admin/kanban/casos" element={<ErrorBoundary><CustomKanban /></ErrorBoundary>} />
+                    <Route path="/frontend-repo/admin/caso/:id" element={<ErrorBoundary><FormularioCasoParent /></ErrorBoundary>} />
+                    <Route path="/frontend-repo/admin/nuevo-caso" element={<ErrorBoundary><FormularioCasoParent /></ErrorBoundary>} />
+                    <Route path="/frontend-repo/admin/gestion" element={<ErrorBoundary><GestionPage /></ErrorBoundary>} />
+                    <Route path="/frontend-repo/publicacion/:publicacionid" element={<PublicacionPage />} />
+                    <Route path="/frontend-repo/admin/editar-publicacion/:id" element={<EditarPublicacion />} />
+                    <Route path="/frontend-repo/admin/account-management" element={<ErrorBoundary><AdminAccountManagement /></ErrorBoundary>} />
+                    <Route path="/frontend-repo/admin/faq" element={<ErrorBoundary><AdminFAQ /></ErrorBoundary>} />
+                    <Route path="/frontend-repo/admin/account-management/information" element={<ErrorBoundary><AdminInformation /></ErrorBoundary>} />
                   </>
                 ) : (
-                  <Route path="/admin/*" element={<PaginaProhibida />} />
+                  <Route path="/frontend-repo/admin/*" element={<PaginaProhibida />} />
                 )}
-                <Route path="/preguntas" element={<ErrorBoundary><PreguntasFrecuentes /></ErrorBoundary>} />
-                <Route path="/account-management" element={<ErrorBoundary><UserAccountManagement /></ErrorBoundary>} />
-                <Route path="/account-management/information" element={<ErrorBoundary><Information /></ErrorBoundary>} />
-                <Route path="/search" element={<ErrorBoundary><Search /></ErrorBoundary>} />
-                <Route path="/publicaciones" element={<ErrorBoundary><UsuarioPublicaciones /></ErrorBoundary>} />
-                <Route path="/publicacion/:publicacionid" element={<UserPublicacionPage />} />
-                <Route path="/bloqueado" element={<PaginaUsuarioBloqueado />} />
-                <Route path="/" element={<Navigate to="/sobremi" />} />
+                <Route path="/frontend-repo/preguntas" element={<ErrorBoundary><PreguntasFrecuentes /></ErrorBoundary>} />
+                <Route path="/frontend-repo/account-management" element={<ErrorBoundary><UserAccountManagement /></ErrorBoundary>} />
+                <Route path="/frontend-repo/account-management/information" element={<ErrorBoundary><Information /></ErrorBoundary>} />
+                <Route path="/frontend-repo/search" element={<ErrorBoundary><Search /></ErrorBoundary>} />
+                <Route path="/frontend-repo/publicaciones" element={<ErrorBoundary><UsuarioPublicaciones /></ErrorBoundary>} />
+                <Route path="/frontend-repo/publicacion/:publicacionid" element={<UserPublicacionPage />} />
+                <Route path="/frontend-repo/bloqueado" element={<PaginaUsuarioBloqueado />} />
                 <Route path="*" element={<PaginaNoEncontrada />} />
               </Routes>
             </Suspense>

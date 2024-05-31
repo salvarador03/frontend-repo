@@ -16,7 +16,7 @@ const Breadcrumb = () => {
         transition={{ duration: 0.5 }}
       >
         <li className="flex items-center">
-          <Link to="/" className="text-blue-500 hover:underline flex items-center">
+          <Link to="/frontend-repo/" className="text-blue-500 hover:underline flex items-center">
             <FaHome className="mr-1" /> Home
           </Link>
           <FaChevronRight className="mx-2 text-gray-500" />

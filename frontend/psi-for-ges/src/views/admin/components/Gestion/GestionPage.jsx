@@ -15,7 +15,7 @@ const GestionPage = () => {
         Opciones de Gestión
       </motion.h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <Link to="/admin/kanban/casos">
+        <Link to="/frontend-repo/admin/kanban/casos">
           <motion.div 
             className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow"
             whileHover={{ scale: 1.05 }}
@@ -25,7 +25,7 @@ const GestionPage = () => {
             <h2 className="text-2xl font-semibold">Gestión de Casos</h2>
           </motion.div>
         </Link>
-        <Link to="/admin/gestion-servicios">
+        <Link to="/frontend-repo/admin/gestion-servicios">
           <motion.div 
             className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow"
             whileHover={{ scale: 1.05 }}

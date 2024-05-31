@@ -8,6 +8,7 @@ import NavLink from './NavLink';
 import { useAuth } from '../../features/Context/AuthContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getMessages } from '../../../../../services/FeaturesService';
+import logo from '../../../../../assets/img/logo.svg';
 
 const Navbar = () => {
   const [messages, setMessages] = useState({});
@@ -75,8 +76,8 @@ const Navbar = () => {
           ) : (
             <>
               <div className="flex items-center space-x-6">
-                <Link to="/" className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-                  <img src="/src/assets/img/logo.svg" alt="Pablo Alvarado logo" className="w-40 h-40" />
+                <Link to="/frontend-repo/" className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                  <img src={logo} alt="Logo" className="w-40 h-40 mx-auto my-4" />
                 </Link>
                 <div className="hidden md:flex items-center space-x-24">
                   {[
@@ -99,7 +100,7 @@ const Navbar = () => {
                     {isLoggedIn ? (
                       <ProfileButton user={user} />
                     ) : (
-                      <IconWrapper><Link to="/login" className="hover:text-gray-900"><FaUser /></Link></IconWrapper>
+                      <IconWrapper><Link to="/frontend-repo/login" className="hover:text-gray-900"><FaUser /></Link></IconWrapper>
                     )}
                   </div>
                 </div>
@@ -147,7 +148,7 @@ const Navbar = () => {
                         {isLoggedIn ? (
                           <ProfileButton user={user} />
                         ) : (
-                          <IconWrapper><Link to="/login" className="hover:text-gray-900"><FaUser /></Link></IconWrapper>
+                          <IconWrapper><Link to="/frontend-repo/login" className="hover:text-gray-900"><FaUser /></Link></IconWrapper>
                         )}
                       </div>
                     </div>

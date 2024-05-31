@@ -16,10 +16,10 @@ const Success = () => {
             Tu pago ha sido procesado exitosamente.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
-            <Link to="/" className="block py-2 px-4 text-white font-medium bg-indigo-600 duration-150 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg">
+            <Link to="/frontend-repo/" className="block py-2 px-4 text-white font-medium bg-indigo-600 duration-150 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg">
               Regresar
             </Link>
-            <Link to="/contacto" className="block py-2 px-4 text-gray-700 hover:bg-gray-50 font-medium duration-150 active:bg-gray-100 border rounded-lg">
+            <Link to="/frontend-repo/contacto" className="block py-2 px-4 text-gray-700 hover:bg-gray-50 font-medium duration-150 active:bg-gray-100 border rounded-lg">
               Contactar soporte
             </Link>
           </div>

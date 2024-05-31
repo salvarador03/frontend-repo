@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "../../../../user/components/features/Context/LanguageProvider";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaEnvelope, FaGlobe } from "react-icons/fa";
 import { motion } from "framer-motion";
+// Importa el logo
+import logo from '../../../../../assets/img/logo.svg';
+
 
 const AdminFooter = () => {
   const { language, changeLanguage } = useLanguage();
@@ -10,6 +13,7 @@ const AdminFooter = () => {
   const [hoveredLink, setHoveredLink] = useState(null);
   const apiEndpoint = import.meta.env.VITE_API_ENDPOINT;
   const navRef = useRef(null);
+  
 
   const handleChangeLanguage = (event) => {
     changeLanguage(event.target.value);
@@ -45,8 +49,8 @@ const AdminFooter = () => {
           transition={{ duration: 1 }}
           className="w-64 flex-shrink-0 mx-auto text-center md:text-left md:my-8"
         >
-          <Link to="/" className="flex title-font font-medium items-center justify-center md:justify-start text-white">
-            <img src="/src/assets/img/logo.svg" alt="logo" className="w-56 h-56" />
+          <Link to="/frontend-repo/" className="flex title-font font-medium items-center justify-center md:justify-start text-white">
+          <img src={logo} alt="Logo" className="w-56 h-56 mx-auto my-4" />
           </Link>
           <p className="mt-2 text-sm text-white">{messages['text.footer.parrafo']}</p>
         </motion.div>

@@ -72,7 +72,7 @@ const Search = () => {
             <p className="text-gray-600 text-center">No se encontraron resultados.</p>
           )}
           <div className="mt-6 text-center">
-            <Link to="/" className="text-blue-500 hover:text-blue-700 flex items-center justify-center">
+            <Link to="/frontend-repo/" className="text-blue-500 hover:text-blue-700 flex items-center justify-center">
               <FaArrowLeft className="mr-2" /> Volver a la página principal
             </Link>
           </div>

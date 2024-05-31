@@ -55,7 +55,7 @@ const UserMenu = ({ user, onLogout }) => {
       </button>
       {isOpen && (
         <div className="absolute right-0 bg-white shadow-lg mt-2 py-1 w-48">
-          <Link to="/mi-cuenta" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mi Cuenta</Link>
+          <Link to="/frontend-repo/mi-cuenta" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mi Cuenta</Link>
           <button onClick={onLogout} className="block px-4 py-2 text-sm text-red-500 hover:bg-gray-100 w-full text-left">Cerrar Sesión</button>
         </div>
       )}
@@ -97,7 +97,7 @@ const Navbar = () => {
   return (
     <header className="text-gray-600 body-font">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <Link to="/" className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <Link to="/frontend-repo/" className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
           <img src="/src/assets/img/logo.svg" alt="logo" className="w-56 h-56" />
         </Link>
 
@@ -121,8 +121,8 @@ const Navbar = () => {
               />
             ))}
             <div className="flex justify-center mt-4 space-x-4">
-              <IconWrapper><Link to="/search" className="hover:text-gray-900"><FaSearch /></Link></IconWrapper>
-              {user ? <UserMenu user={user} onLogout={handleLogout} /> : <IconWrapper><Link to="/login" className="hover:text-gray-900"><FaUser /></Link></IconWrapper>}
+              <IconWrapper><Link to="/frontend-repo/search" className="hover:text-gray-900"><FaSearch /></Link></IconWrapper>
+              {user ? <UserMenu user={user} onLogout={handleLogout} /> : <IconWrapper><Link to="/frontend-repo/login" className="hover:text-gray-900"><FaUser /></Link></IconWrapper>}
             </div>
           </div>
         )}
@@ -149,7 +149,7 @@ const Navbar = () => {
               setActiveTab={setActiveTab}
             />
           ))}
-          {user ? <UserMenu user={user} onLogout={handleLogout} /> : <IconWrapper><Link to="/login" className="hover:text-gray-900"><FaUser /></Link></IconWrapper>}
+          {user ? <UserMenu user={user} onLogout={handleLogout} /> : <IconWrapper><Link to="/frontend-repo/login" className="hover:text-gray-900"><FaUser /></Link></IconWrapper>}
         </div>
       </div>
     </header>

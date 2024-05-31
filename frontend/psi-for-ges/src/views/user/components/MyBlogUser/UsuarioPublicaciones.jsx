@@ -61,7 +61,7 @@ const UsuarioPublicaciones = () => {
             <img src={`data:image/jpeg;base64,${ultimaPublicacion.foto}`} alt={ultimaPublicacion.titulo} className="w-full h-80 object-cover rounded-lg mb-6" />
             <h3 className="text-2xl font-semibold mb-4">{ultimaPublicacion.titulo}</h3>
             <p className="text-gray-600 mb-6">{borrarEtiquetasHtml(ultimaPublicacion.contenido).slice(0, 200)}...</p>
-            <Link to={`/publicacion/${ultimaPublicacion.pid}`} className="text-indigo-500 hover:text-indigo-700 font-semibold">Leer más »</Link>
+            <Link to={`/frontend-repo/publicacion/${ultimaPublicacion.pid}`} className="text-indigo-500 hover:text-indigo-700 font-semibold">Leer más »</Link>
           </div>
         </div>
       )}
@@ -76,7 +76,7 @@ const UsuarioPublicaciones = () => {
                 <>
                   <h3 className="text-xl font-semibold mb-2">{pub.titulo}</h3>
                   <p className="text-gray-600 mb-4">{borrarEtiquetasHtml(pub.contenido).slice(0, 100)}...</p>
-                  <Link to={`/publicacion/${pub.pid}`} className="text-indigo-500 hover:text-indigo-700 font-semibold">Leer más »</Link>
+                  <Link to={`/frontend-repo/publicacion/${pub.pid}`} className="text-indigo-500 hover:text-indigo-700 font-semibold">Leer más »</Link>
                 </>
               ) : (
                 <>
@@ -106,7 +106,7 @@ const UsuarioPublicaciones = () => {
               <img src={`data:image/jpeg;base64,${publicacion.foto}`} alt={publicacion.titulo} className="w-full h-48 object-cover rounded-lg mb-4" />
               <h3 className="text-xl font-semibold mb-2">{publicacion.titulo}</h3>
               <p className="text-gray-600 mb-4">{borrarEtiquetasHtml(publicacion.contenido).slice(0, 100)}...</p>
-              <Link to={`/publicacion/${publicacion.pid}`} className="text-indigo-500 hover:text-indigo-700 font-semibold">Leer más »</Link>
+              <Link to={`/frontend-repo/publicacion/${publicacion.pid}`} className="text-indigo-500 hover:text-indigo-700 font-semibold">Leer más »</Link>
             </li>
           ))}
         </ul>

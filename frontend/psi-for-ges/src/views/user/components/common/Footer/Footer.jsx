@@ -4,6 +4,7 @@ import { useLanguage } from "../../features/Context/LanguageProvider";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaEnvelope, FaGlobe } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { getMessages } from "../../../../../services/FeaturesService";
+import logo from '../../../../../assets/img/logo.svg';
 
 const Footer = () => {
   const { language, changeLanguage } = useLanguage();
@@ -44,8 +45,8 @@ const Footer = () => {
           transition={{ duration: 1 }}
           className="w-64 flex-shrink-0 mx-auto text-center md:text-left md:my-8"
         >
-          <Link to="/" className="flex title-font font-medium items-center justify-center md:justify-start text-gray-900">
-            <img src="/src/assets/img/logo.svg" alt="logo" className="w-56 h-56" />
+          <Link to="/frontend-repo/" className="flex title-font font-medium items-center justify-center md:justify-start text-gray-900">
+            <img src={logo} alt="Logo" className="w-56 h-56 mx-auto my-4" />
           </Link>
           <p className="mt-2 text-sm text-gray-500">{messages['text.footer.parrafo']}</p>
         </motion.div>

@@ -11,7 +11,7 @@ const UserMenu = ({ user, onLogout }) => {
         </button>
         {isOpen && (
           <div className="absolute right-0 bg-white shadow-lg mt-2 py-1 w-48">
-            <Link to="/mi-cuenta" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mi Cuenta</Link>
+            <Link to="/frontend-repo/mi-cuenta" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mi Cuenta</Link>
             <button onClick={onLogout} className="block px-4 py-2 text-sm text-red-500 hover:bg-gray-100 w-full text-left">Cerrar Sesión</button>
           </div>
         )}

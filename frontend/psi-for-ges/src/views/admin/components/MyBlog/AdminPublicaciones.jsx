@@ -73,7 +73,7 @@ const AdminPublicaciones = () => {
       <h1 className="text-3xl font-bold mb-4 text-center">Administración de Publicaciones</h1>
       <div className="relative inline-block text-left mb-6">
         <div>
-          <Link to="/admin/crear-publicaciones" className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-green-500 text-sm font-medium text-white hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-green-500">
+          <Link to="/frontend-repo/admin/crear-publicaciones" className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-green-500 text-sm font-medium text-white hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-green-500">
             <FaPlus className="mr-2" /> Añadir Publicación
           </Link>
         </div>
@@ -105,7 +105,7 @@ const AdminPublicaciones = () => {
                 <div>
                   <h3 className="text-lg font-semibold">{publicacion.titulo}</h3>
                   <p className="text-sm text-gray-600">{borrarEtiquetasHtml(publicacion.contenido).slice(0, 100)}...</p>
-                  <Link to={`/publicacion/${publicacion.pid}`} className="text-purple-500 hover:text-purple-700">Leer más »</Link>
+                  <Link to={`/frontend-repo/publicacion/${publicacion.pid}`} className="text-purple-500 hover:text-purple-700">Leer más »</Link>
                 </div>
               </div>
               <div className="flex items-center justify-between mt-4">

@@ -213,7 +213,7 @@ const PublicacionPage = () => {
                 </li>
               ))}
             </ul>
-            <Link to="/admin/publicaciones" className="text-blue-500 hover:underline mt-8 block flex items-center py-4 px-2 hover:bg-gray-200 transition-colors duration-300">
+            <Link to="/frontend-repo/admin/publicaciones" className="text-blue-500 hover:underline mt-8 block flex items-center py-4 px-2 hover:bg-gray-200 transition-colors duration-300">
               <FaArrowLeft className="mr-2 text-xl" /> Volver a todas las publicaciones
             </Link>
           </div>

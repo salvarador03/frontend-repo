@@ -7,6 +7,7 @@ import IconWrapper from '../../../../user/components/common/Navbar/IconWrapper';
 import NavLink from './NavLink';
 import { useAuth } from '../../../../user/components/features/Context/AuthContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from '../../../../../assets/img/logo.svg';
 
 const AdminNavbar = () => {
   const [messages, setMessages] = useState({});
@@ -76,8 +77,8 @@ const AdminNavbar = () => {
         ) : (
           <>
             <div className="flex items-center space-x-6">
-              <Link to="/" className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
-                <img src="/src/assets/img/logo.svg" alt="Pablo Alvarado logo" className="w-16 h-16" />
+              <Link to="/frontend-repo/" className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+                <img src={logo} alt="Logo" className="w-36 h-36 mx-auto my-4" />
               </Link>
               <div className="hidden md:flex items-center space-x-24">
                 {[
@@ -103,14 +104,14 @@ const AdminNavbar = () => {
                       <FaPlusCircle />
                       {showAddPublication && (
                         <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg py-2 z-50">
-                          <Link to="/admin/crear-publicaciones" className="block px-4 py-2 text-black hover:bg-gray-200">Añadir Publicacion</Link>
-                          <Link to="/admin/nuevo-caso" className="block px-4 py-2 text-black hover:bg-gray-200">Añadir Caso</Link>
+                          <Link to="/frontend-repo/admin/crear-publicaciones" className="block px-4 py-2 text-black hover:bg-gray-200">Añadir Publicacion</Link>
+                          <Link to="/frontend-repo/admin/nuevo-caso" className="block px-4 py-2 text-black hover:bg-gray-200">Añadir Caso</Link>
                         </div>
                       )}
                     </button>
                   </IconWrapper>
-                  <IconWrapper><Link to="/agenda" className="hover:text-gray-300"><FaCalendarAlt /></Link></IconWrapper>
-                  <IconWrapper><Link to="/admin/gestion" className="hover:text-gray-300"><FaTasks /></Link></IconWrapper>
+                  <IconWrapper><Link to="/frontend-repo/agenda" className="hover:text-gray-300"><FaCalendarAlt /></Link></IconWrapper>
+                  <IconWrapper><Link to="/frontend-repo/admin/gestion" className="hover:text-gray-300"><FaTasks /></Link></IconWrapper>
                   {isLoggedIn && (
                     <AdminProfileButton user={user} />
                   )}
@@ -163,14 +164,14 @@ const AdminNavbar = () => {
                           <FaPlusCircle />
                           {showAddPublication && (
                             <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg py-2 z-50">
-                              <Link to="/admin/crear-publicaciones" className="block px-4 py-2 text-black hover:bg-gray-200">Añadir Publicacion</Link>
-                              <Link to="/admin/nuevo-caso" className="block px-4 py-2 text-black hover:bg-gray-200">Añadir Caso</Link>
+                              <Link to="/frontend-repo/admin/crear-publicaciones" className="block px-4 py-2 text-black hover:bg-gray-200">Añadir Publicacion</Link>
+                              <Link to="/frontend-repo/admin/nuevo-caso" className="block px-4 py-2 text-black hover:bg-gray-200">Añadir Caso</Link>
                             </div>
                           )}
                         </button>
                       </IconWrapper>
-                      <IconWrapper><Link to="/agenda" className="hover:text-gray-300"><FaCalendarAlt /></Link></IconWrapper>
-                      <IconWrapper><Link to="/admin/gestion" className="hover:text-gray-300"><FaTasks /></Link></IconWrapper>
+                      <IconWrapper><Link to="/frontend-repo/agenda" className="hover:text-gray-300"><FaCalendarAlt /></Link></IconWrapper>
+                      <IconWrapper><Link to="/frontend-repo/admin/gestion" className="hover:text-gray-300"><FaTasks /></Link></IconWrapper>
                       {isLoggedIn && (
                         <AdminProfileButton user={user} />
                       )}

@@ -51,7 +51,7 @@ const SobreMi = () => {
               <p className="mt-2">{messages['text.sobremi.parrafo3']}</p>
               <p className="mt-2">{messages['text.sobremi.parrafo4']}</p>
               <p className="mt-2">{messages['text.sobremi.parrafo5']}</p>
-              <Link to="/contacto" className="mt-2 font-semibold text-blue-600">{messages['text.sobremi.parrafo6']}</Link>
+              <Link to="/frontend-repo/contacto" className="mt-2 font-semibold text-blue-600">{messages['text.sobremi.parrafo6']}</Link>
             </div>
           </div>
         </motion.div>

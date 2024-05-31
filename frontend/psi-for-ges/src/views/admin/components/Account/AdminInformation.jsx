@@ -129,7 +129,7 @@ const AdminInformation = () => {
             <div className="max-w-4xl w-full mt-10 bg-white p-8 rounded-lg shadow-lg">
                 <div className="flex justify-between items-center border-b pb-4 mb-4">
                     <h1 className="text-3xl font-semibold text-gray-800">Información de Usuario</h1>
-                    <Link to="/admin/account-management">
+                    <Link to="/frontend-repo/admin/account-management">
                         <button className="text-blue-600 hover:text-blue-800">
                             {messages["text.informacion.volver"]}
                         </button>
